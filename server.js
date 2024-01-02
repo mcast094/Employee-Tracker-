@@ -10,3 +10,8 @@ const sqlConnection = mysql.createConnection({
     database: 'employeeDatabase'
 });
 
+sqlConnection.connect(fucntion (err), {
+    /* if (err) throw err;
+    console.log("connected as id" + sqlConnection.threadId); */
+    
+});
