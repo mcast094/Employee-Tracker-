@@ -103,7 +103,7 @@ function addRole() {
         ])
         .then(response => {
             sqlConnection.query(`INSERT INTO roles(roleName, salary, department_id) 
-            VALUES ("${response.RoleName}", "${response.RoleSalary}, "${response.RoleDepartmentID}")`, err => {
+            VALUES ("${response.RoleName}", ${response.RoleSalary}, ${response.RoleDepartmentID})`, err => {
                 viewRoles();
             })
         })
@@ -132,7 +132,7 @@ function addEmployee() {
                 type: 'input',
                 message: 'enter manager ID',
                 name: 'EmployeeManagerID'
-            }
+            },
         ])
         .then(response => {
             sqlConnection.query(`INSERT INTO employee(firstName, lastName, role_id, manager_id)
